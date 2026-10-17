@@ -1,0 +1,18 @@
+# Shared perception service (sRSU) on the N6 side of the qod423 core.
+# AF agents probe it THROUGH the UE tunnel (ping -I uesimtun0 10.101.200.40),
+# so its availability is an AF observation (provenance af_service_probe).
+# The scenario injector pauses it / applies netem to create correlated failures.
+#   docker compose -f config/srsu-compose.yml up -d
+services:
+  prenef-srsu:
+    image: alpine:3.20
+    container_name: prenef-srsu
+    command: ["sleep", "infinity"]
+    cap_add: [NET_ADMIN]
+    networks:
+      privnet-qod423:
+        ipv4_address: 10.101.200.40
+networks:
+  privnet-qod423:
+    external: true
+    name: free5gc-compose-qod423_privnet-qod423

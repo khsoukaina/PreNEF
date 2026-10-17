@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "body": null,
+        "latency_s": 0.0586,
+        "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/57795ec8-598a-426b-86e3-fac4859c4a94",
+        "status": 201
+      },
+      "id": "C1",
+      "ref": "TS 29.122 AsSessionWithQoS POST -> 201 Created + Location",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 200
+      },
+      "id": "C2",
+      "ref": "GET individual subscription -> 200 with stored content",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 200
+      },
+      "id": "C3",
+      "ref": "GET subscriptions collection -> 200 array",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 501
+      },
+      "id": "C4",
+      "ref": "PATCH merge-patch+json -> 200/204",
+      "result": "fail"
+    },
+    {
+      "detail": {
+        "status": 501
+      },
+      "id": "C5",
+      "ref": "PATCH with wrong media type -> 415",
+      "result": "warn"
+    },
+    {
+      "detail": {
+        "delay_s": null,
+        "events": [],
+        "negative": false,
+        "positive": false
+      },
+      "id": "C8",
+      "ref": "UserPlaneNotificationData correlated by 'transaction' == subscription URI",
+      "result": "fail"
+    },
+    {
+      "detail": {
+        "problem+json": false,
+        "status": 400
+      },
+      "id": "C6",
+      "ref": "POST without UE address -> 400 ProblemDetails",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 404
+      },
+      "id": "C7",
+      "ref": "GET unknown subscription -> 404",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 204
+      },
+      "id": "C9",
+      "ref": "DELETE -> 204 (or 200)",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 404
+      },
+      "id": "C10",
+      "ref": "GET after DELETE -> 404",
+      "result": "pass"
+    }
+  ],
+  "mock": false,
+  "note": "HTTP success here is NOT allocation evidence (eq. 5-6).",
+  "request_body": {
+    "dnn": "internet",
+    "flowInfo": [
+      {
+        "flowDescriptions": [
+          "permit out 17 from 10.70.0.2 to 10.101.200.30 5201",
+          "permit out 17 from 10.101.200.30 5201 to 10.70.0.2"
+        ],
+        "flowId": 1
+      }
+    ],
+    "notificationDestination": "http://10.101.200.1:18080/notify/af2",
+    "qosReference": "interactive-low-latency",
+    "snssai": {
+      "sd": "010203",
+      "sst": 1
+    },
+    "ueIpv4Addr": "10.70.0.2"
+  },
+  "scs_as_id": "prenef-lab-af2",
+  "summary": {
+    "fail": 2,
+    "pass": 7,
+    "warn": 1
+  },
+  "target": "http://10.101.200.14:8000"
+}

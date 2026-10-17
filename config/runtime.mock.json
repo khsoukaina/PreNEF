@@ -1,0 +1,46 @@
+{
+  "bind": "127.0.0.1",
+  "port": 19090,
+  "contracts": [
+    "config/contracts/af1.json",
+    "config/contracts/af2.json",
+    "config/contracts/af3.json",
+    "config/contracts/af4.json"
+  ],
+  "af_tokens": {
+    "af1": "CHANGE-ME-af1-token",
+    "af2": "CHANGE-ME-af2-token",
+    "af3": "CHANGE-ME-af3-token",
+    "af4": "CHANGE-ME-af4-token"
+  },
+  "rate_per_s": 50,
+  "burst": 100,
+  "tick_s": 0.05,
+  "service_s_default": 0.9,
+  "alert_cooldown_s": 3.0,
+  "pred_period_s": 0.5,
+  "p_horizon_s": 5.0,
+  "planner": {
+    "concurrency": 1,
+    "eta": 0.5,
+    "epsilon_s": 0.25,
+    "u_max": 0.35,
+    "p_alert": 0.5,
+    "guard_s": 0.5,
+    "l_pred_s": 0.05,
+    "l_notif_s": 0.1
+  },
+  "binding": "config/binding.mock.json",
+  "model_dir": "models/dtip-mock",
+  "nef": {
+    "api_root": "http://127.0.0.1:18000",
+    "transport": "http1",
+    "timeout_s": 10,
+    "events": [
+      "SUCCESSFUL_RESOURCES_ALLOCATION",
+      "FAILED_RESOURCES_ALLOCATION"
+    ]
+  },
+  "notification_base_url": "http://127.0.0.1:19090",
+  "independent_model_dir": "models/dtip-mock/variants/A_per_af"
+}

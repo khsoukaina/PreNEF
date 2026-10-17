@@ -1,0 +1,40 @@
+{
+  "alloc_window_s": 15.0,
+  "release_window_s": 15.0,
+  "allocated_if_any_of": [
+    [
+      "notification"
+    ],
+    [
+      "pfcp",
+      "dataplane"
+    ]
+  ],
+  "released_if_any_of": [
+    [
+      "delete_ok",
+      "release_notification"
+    ],
+    [
+      "delete_ok",
+      "pfcp_after_delete"
+    ]
+  ],
+  "log_patterns": {
+    "pcf": [
+      "PolAuth\\] Session Binding Success",
+      "PolAuth\\] App Session Id\\[.*\\] (Create|Delete)",
+      "Send SM Policy Update Notification"
+    ],
+    "smf": [
+      "Install PCCRule",
+      "Remove PCCRule",
+      "Sending PFCP Session Modification Request",
+      "Received PFCP Session Modification Response"
+    ],
+    "upf": [
+      "(?i)qer",
+      "(?i)session modif"
+    ]
+  }
+}

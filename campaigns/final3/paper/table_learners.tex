@@ -1,0 +1,21 @@
+% requires \usepackage{booktabs}
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{DTIP base learners on held-out test runs, identical pipeline (calibration, ensemble, conformal $T_{safe}$). AUROC and weighted ECE at $h=5$\,s with 95\% run-bootstrap CI; latency of one prediction.}
+\label{tab:learners}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccr}
+\toprule
+Learner & AUROC & ECE & $T_{safe}$ cov. & Lat. (ms) \\
+\midrule
+CatBoost & 0.919 {\scriptsize[0.914, 0.923]} & 0.0196 & 0.94 & 15.2 \\
+Random forest & 0.914 {\scriptsize[0.901, 0.927]} & 0.0195 & 0.95 & 1740.4 \\
+XGBoost & 0.914 {\scriptsize[0.902, 0.923]} & 0.0208 & 0.93 & 27.6 \\
+\textbf{HistGB (sklearn)} & 0.914 {\scriptsize[0.898, 0.926]} & 0.0192 & 0.94 & 419.2 \\
+LightGBM & 0.914 {\scriptsize[0.899, 0.924]} & 0.0190 & 0.93 & 40.8 \\
+MLP & 0.910 {\scriptsize[0.903, 0.917]} & 0.0186 & 0.94 & 24.6 \\
+Logistic regression & 0.883 {\scriptsize[0.859, 0.905]} & 0.0162 & 0.95 & 24.7 \\
+\bottomrule
+\end{tabular}
+\end{table}

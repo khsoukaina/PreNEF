@@ -1,0 +1,131 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "body": null,
+        "latency_s": 0.4572,
+        "location": "http://127.0.0.1:18000/3gpp-as-session-with-qos/v1/af1/subscriptions/5f9c1e6d3d48",
+        "status": 201
+      },
+      "id": "C1",
+      "ref": "TS 29.122 AsSessionWithQoS POST -> 201 Created + Location",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 200
+      },
+      "id": "C2",
+      "ref": "GET individual subscription -> 200 with stored content",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 200
+      },
+      "id": "C3",
+      "ref": "GET subscriptions collection -> 200 array",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 200
+      },
+      "id": "C4",
+      "ref": "PATCH merge-patch+json -> 200/204",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 415
+      },
+      "id": "C5",
+      "ref": "PATCH with wrong media type -> 415",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "delay_s": 0.808,
+        "events": [
+          "SUCCESSFUL_RESOURCES_ALLOCATION"
+        ],
+        "negative": false,
+        "positive": true
+      },
+      "id": "C8",
+      "ref": "UserPlaneNotificationData correlated by 'transaction' == subscription URI",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "problem+json": true,
+        "status": 400
+      },
+      "id": "C6",
+      "ref": "POST without UE address -> 400 ProblemDetails",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 404
+      },
+      "id": "C7",
+      "ref": "GET unknown subscription -> 404",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 204
+      },
+      "id": "C9",
+      "ref": "DELETE -> 204 (or 200)",
+      "result": "pass"
+    },
+    {
+      "detail": {
+        "status": 404
+      },
+      "id": "C10",
+      "ref": "GET after DELETE -> 404",
+      "result": "pass"
+    }
+  ],
+  "mock": true,
+  "note": "HTTP success here is NOT allocation evidence (eq. 5-6).",
+  "request_body": {
+    "altQoSReferences": [
+      "qos-remote-alt"
+    ],
+    "dnn": "internet",
+    "events": [
+      "SUCCESSFUL_RESOURCES_ALLOCATION",
+      "FAILED_RESOURCES_ALLOCATION",
+      "QOS_GUARANTEED",
+      "QOS_NOT_GUARANTEED",
+      "SESSION_TERMINATION"
+    ],
+    "flowInfo": [
+      {
+        "flowDescriptions": [
+          "permit out 17 from 10.60.0.1 to 10.101.200.30 5201",
+          "permit out 17 from 10.101.200.30 5201 to 10.60.0.1"
+        ],
+        "flowId": 1
+      }
+    ],
+    "notificationDestination": "http://127.0.0.1:18080/notify/af1",
+    "qosReference": "qos-remote",
+    "snssai": {
+      "sd": "010203",
+      "sst": 1
+    },
+    "ueIpv4Addr": "10.60.0.1"
+  },
+  "scs_as_id": "af1",
+  "summary": {
+    "fail": 0,
+    "pass": 10,
+    "warn": 0
+  },
+  "target": "http://127.0.0.1:18000"
+}

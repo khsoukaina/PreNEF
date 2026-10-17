@@ -1,0 +1,1364 @@
+{
+  "config": {
+    "alloc_window_s": 15.0,
+    "allocated_if_any_of": [
+      [
+        "notification"
+      ],
+      [
+        "pfcp",
+        "dataplane"
+      ]
+    ],
+    "dataplane_min_ratio": 0.9,
+    "log_patterns": {
+      "pcf": [
+        "PolAuth\\] Session Binding Success",
+        "PolAuth\\] App Session Id\\[.*\\] (Create|Delete)",
+        "Send SM Policy Update Notification"
+      ],
+      "smf": [
+        "Install PCCRule",
+        "Remove PCCRule",
+        "Sending PFCP Session Modification Request",
+        "Received PFCP Session Modification Response"
+      ],
+      "upf": [
+        "(?i)qer",
+        "(?i)session modif"
+      ]
+    },
+    "release_window_s": 15.0,
+    "released_if_any_of": [
+      [
+        "delete_ok",
+        "release_notification"
+      ],
+      [
+        "delete_ok",
+        "pfcp_after_delete"
+      ]
+    ],
+    "tshark_fields": [
+      "frame.time_epoch",
+      "pfcp.msg_type",
+      "pfcp.seid",
+      "pfcp.ue_ip_addr_ipv4",
+      "pfcp.qer_id",
+      "pfcp.cause",
+      "pfcp.seqno"
+    ]
+  },
+  "pfcp_error": null,
+  "pfcp_messages": 100,
+  "subscriptions": [
+    {
+      "af_id": "af3",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-e7611c00d3274686",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af3/subscriptions/4c908a41-e3c1-45a2-82e1-1b2ac3e4ccb4",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.863270728Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863512
+            },
+            {
+              "line": "2026-10-15T12:37:42.863284890Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863555
+            },
+            {
+              "line": "2026-10-15T12:37:42.886466916Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.886619
+            },
+            {
+              "line": "2026-10-15T12:37:42.960646585Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.96075
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.866191520Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067862.866234
+            },
+            {
+              "line": "2026-10-15T12:37:42.866278144Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mInstall PCCRule[PccRuleId-438]",
+              "t": 1792067862.866334
+            },
+            {
+              "line": "2026-10-15T12:37:42.870735753Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870815
+            },
+            {
+              "line": "2026-10-15T12:37:42.870736921Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870837
+            },
+            {
+              "line": "2026-10-15T12:37:42.873065073Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.873221
+            },
+            {
+              "line": "2026-10-15T12:37:42.873717722Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.87383
+            },
+            {
+              "line": "2026-10-15T12:37:42.889419733Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-445]",
+              "t": 1792067862.889532
+            },
+            {
+              "line": "2026-10-15T12:37:42.894878866Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.894985
+            },
+            {
+              "line": "2026-10-15T12:37:42.897022399Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.897127
+            },
+            {
+              "line": "2026-10-15T12:37:42.963328409Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-652]",
+              "t": 1792067862.963472
+            },
+            {
+              "line": "2026-10-15T12:37:42.967347643Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.967439
+            },
+            {
+              "line": "2026-10-15T12:37:42.969586500Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.969694
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.3"
+    },
+    {
+      "af_id": "af1",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-15cca1e4e65e4e31",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af1/subscriptions/9187e1cc-2a3d-4c44-adff-1a16510acd4d",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.863270728Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863512
+            },
+            {
+              "line": "2026-10-15T12:37:42.863284890Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863555
+            },
+            {
+              "line": "2026-10-15T12:37:42.886466916Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.886619
+            },
+            {
+              "line": "2026-10-15T12:37:42.960646585Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.96075
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.866191520Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067862.866234
+            },
+            {
+              "line": "2026-10-15T12:37:42.866278144Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mInstall PCCRule[PccRuleId-438]",
+              "t": 1792067862.866334
+            },
+            {
+              "line": "2026-10-15T12:37:42.870735753Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870815
+            },
+            {
+              "line": "2026-10-15T12:37:42.870736921Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870837
+            },
+            {
+              "line": "2026-10-15T12:37:42.873065073Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.873221
+            },
+            {
+              "line": "2026-10-15T12:37:42.873717722Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.87383
+            },
+            {
+              "line": "2026-10-15T12:37:42.889419733Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-445]",
+              "t": 1792067862.889532
+            },
+            {
+              "line": "2026-10-15T12:37:42.894878866Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.894985
+            },
+            {
+              "line": "2026-10-15T12:37:42.897022399Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.897127
+            },
+            {
+              "line": "2026-10-15T12:37:42.963328409Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-652]",
+              "t": 1792067862.963472
+            },
+            {
+              "line": "2026-10-15T12:37:42.967347643Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.967439
+            },
+            {
+              "line": "2026-10-15T12:37:42.969586500Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.969694
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792067890.371603,
+              "resp_t": 1792067890.372432,
+              "seid": "0x0000000000000001"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.1"
+    },
+    {
+      "af_id": "af4",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-50aab5ccfac448b6",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af4/subscriptions/51f67032-c087-4c54-99cd-6de2dcb10b62",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.863270728Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863512
+            },
+            {
+              "line": "2026-10-15T12:37:42.863284890Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863555
+            },
+            {
+              "line": "2026-10-15T12:37:42.886466916Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.886619
+            },
+            {
+              "line": "2026-10-15T12:37:42.960646585Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.96075
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.866191520Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067862.866234
+            },
+            {
+              "line": "2026-10-15T12:37:42.866278144Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mInstall PCCRule[PccRuleId-438]",
+              "t": 1792067862.866334
+            },
+            {
+              "line": "2026-10-15T12:37:42.870735753Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870815
+            },
+            {
+              "line": "2026-10-15T12:37:42.870736921Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870837
+            },
+            {
+              "line": "2026-10-15T12:37:42.873065073Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.873221
+            },
+            {
+              "line": "2026-10-15T12:37:42.873717722Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.87383
+            },
+            {
+              "line": "2026-10-15T12:37:42.889419733Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-445]",
+              "t": 1792067862.889532
+            },
+            {
+              "line": "2026-10-15T12:37:42.894878866Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.894985
+            },
+            {
+              "line": "2026-10-15T12:37:42.897022399Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.897127
+            },
+            {
+              "line": "2026-10-15T12:37:42.963328409Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-652]",
+              "t": 1792067862.963472
+            },
+            {
+              "line": "2026-10-15T12:37:42.967347643Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.967439
+            },
+            {
+              "line": "2026-10-15T12:37:42.969586500Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.969694
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792067954.898659,
+              "resp_t": 1792067954.899729,
+              "seid": "0x0000000000000004"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.4"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-2324c8ceb31b45d0",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/4db67212-f928-4c7b-8675-89e7bacb14b0",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.863270728Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863512
+            },
+            {
+              "line": "2026-10-15T12:37:42.863284890Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.863555
+            },
+            {
+              "line": "2026-10-15T12:37:42.886466916Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.886619
+            },
+            {
+              "line": "2026-10-15T12:37:42.960646585Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067862.96075
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:37:42.866191520Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067862.866234
+            },
+            {
+              "line": "2026-10-15T12:37:42.866278144Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mInstall PCCRule[PccRuleId-438]",
+              "t": 1792067862.866334
+            },
+            {
+              "line": "2026-10-15T12:37:42.870735753Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870815
+            },
+            {
+              "line": "2026-10-15T12:37:42.870736921Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.870837
+            },
+            {
+              "line": "2026-10-15T12:37:42.873065073Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.873221
+            },
+            {
+              "line": "2026-10-15T12:37:42.873717722Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.87383
+            },
+            {
+              "line": "2026-10-15T12:37:42.889419733Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-445]",
+              "t": 1792067862.889532
+            },
+            {
+              "line": "2026-10-15T12:37:42.894878866Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.894985
+            },
+            {
+              "line": "2026-10-15T12:37:42.897022399Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.897127
+            },
+            {
+              "line": "2026-10-15T12:37:42.963328409Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-652]",
+              "t": 1792067862.963472
+            },
+            {
+              "line": "2026-10-15T12:37:42.967347643Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067862.967439
+            },
+            {
+              "line": "2026-10-15T12:37:42.969586500Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067862.969694
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792067890.412144,
+              "resp_t": 1792067890.41308,
+              "seid": "0x0000000000000002"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    },
+    {
+      "af_id": "af1",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-77705a1dd306491a",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af1/subscriptions/83a5b7fd-6ee8-402f-9667-f58f06e4b67b",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:38:10.362322497Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067890.362557
+            },
+            {
+              "line": "2026-10-15T12:38:10.402798036Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067890.402935
+            },
+            {
+              "line": "2026-10-15T12:38:24.862281493Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067904.862558
+            },
+            {
+              "line": "2026-10-15T12:38:24.894965576Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067904.895162
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:38:10.365279463Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-655]",
+              "t": 1792067890.365461
+            },
+            {
+              "line": "2026-10-15T12:38:10.370059051Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067890.370285
+            },
+            {
+              "line": "2026-10-15T12:38:10.372556553Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067890.372638
+            },
+            {
+              "line": "2026-10-15T12:38:10.405413471Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-653]",
+              "t": 1792067890.405764
+            },
+            {
+              "line": "2026-10-15T12:38:10.411071633Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067890.411165
+            },
+            {
+              "line": "2026-10-15T12:38:10.413222525Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067890.413366
+            },
+            {
+              "line": "2026-10-15T12:38:24.866438271Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mRemove PCCRule[PccRuleId-655]",
+              "t": 1792067904.866713
+            },
+            {
+              "line": "2026-10-15T12:38:24.869576395Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067904.869799
+            },
+            {
+              "line": "2026-10-15T12:38:24.873230038Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067904.873741
+            },
+            {
+              "line": "2026-10-15T12:38:24.898458402Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mRemove PCCRule[PccRuleId-653]",
+              "t": 1792067904.898755
+            },
+            {
+              "line": "2026-10-15T12:38:24.900943512Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067904.901158
+            },
+            {
+              "line": "2026-10-15T12:38:24.904828377Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067904.905047
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792067912.38901,
+              "resp_t": 1792067912.389702,
+              "seid": "0x0000000000000001"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.1"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-67edf727a50c419e",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/a9d3c9eb-ac65-42e6-8876-5d7dc9a9d3fb",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:38:10.362322497Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067890.362557
+            },
+            {
+              "line": "2026-10-15T12:38:10.402798036Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067890.402935
+            },
+            {
+              "line": "2026-10-15T12:38:24.862281493Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067904.862558
+            },
+            {
+              "line": "2026-10-15T12:38:24.894965576Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067904.895162
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:38:10.365279463Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-655]",
+              "t": 1792067890.365461
+            },
+            {
+              "line": "2026-10-15T12:38:10.370059051Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067890.370285
+            },
+            {
+              "line": "2026-10-15T12:38:10.372556553Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067890.372638
+            },
+            {
+              "line": "2026-10-15T12:38:10.405413471Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-653]",
+              "t": 1792067890.405764
+            },
+            {
+              "line": "2026-10-15T12:38:10.411071633Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067890.411165
+            },
+            {
+              "line": "2026-10-15T12:38:10.413222525Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067890.413366
+            },
+            {
+              "line": "2026-10-15T12:38:24.866438271Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mRemove PCCRule[PccRuleId-655]",
+              "t": 1792067904.866713
+            },
+            {
+              "line": "2026-10-15T12:38:24.869576395Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067904.869799
+            },
+            {
+              "line": "2026-10-15T12:38:24.873230038Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067904.873741
+            },
+            {
+              "line": "2026-10-15T12:38:24.898458402Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mRemove PCCRule[PccRuleId-653]",
+              "t": 1792067904.898755
+            },
+            {
+              "line": "2026-10-15T12:38:24.900943512Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067904.901158
+            },
+            {
+              "line": "2026-10-15T12:38:24.904828377Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067904.905047
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792067912.407919,
+              "resp_t": 1792067912.408731,
+              "seid": "0x0000000000000002"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    },
+    {
+      "af_id": "af1",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-8915540b8f7749c3",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af1/subscriptions/19d2f867-8ba0-4ff2-9507-aabc52f0605d",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:38:32.378042109Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067912.378241
+            },
+            {
+              "line": "2026-10-15T12:38:32.398117053Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067912.398361
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:38:32.380650276Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-656]",
+              "t": 1792067912.380766
+            },
+            {
+              "line": "2026-10-15T12:38:32.387076871Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067912.387207
+            },
+            {
+              "line": "2026-10-15T12:38:32.389931754Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067912.390246
+            },
+            {
+              "line": "2026-10-15T12:38:32.401304693Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067912.401396
+            },
+            {
+              "line": "2026-10-15T12:38:32.406872241Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067912.407053
+            },
+            {
+              "line": "2026-10-15T12:38:32.408865437Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067912.408993
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792068034.940184,
+              "resp_t": 1792068034.940932,
+              "seid": "0x0000000000000001"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.1"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-c9352ceee6e24e88",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/158a1e33-e1b5-4b71-a180-df7c7cee3433",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:38:32.378042109Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067912.378241
+            },
+            {
+              "line": "2026-10-15T12:38:32.398117053Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067912.398361
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:38:32.380650276Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-656]",
+              "t": 1792067912.380766
+            },
+            {
+              "line": "2026-10-15T12:38:32.387076871Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067912.387207
+            },
+            {
+              "line": "2026-10-15T12:38:32.389931754Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067912.390246
+            },
+            {
+              "line": "2026-10-15T12:38:32.401304693Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-654]",
+              "t": 1792067912.401396
+            },
+            {
+              "line": "2026-10-15T12:38:32.406872241Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067912.407053
+            },
+            {
+              "line": "2026-10-15T12:38:32.408865437Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067912.408993
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792068014.41778,
+              "resp_t": 1792068014.418449,
+              "seid": "0x0000000000000002"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    },
+    {
+      "af_id": "af4",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-e39057d5ffe54e96",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af4/subscriptions/d6bf073a-4564-4d31-8b00-c7f62158be57",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:39:14.889041374Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067954.889332
+            },
+            {
+              "line": "2026-10-15T12:39:18.326660369Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067958.326749
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:39:14.891798464Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-446]",
+              "t": 1792067954.892076
+            },
+            {
+              "line": "2026-10-15T12:39:14.896916584Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067954.897004
+            },
+            {
+              "line": "2026-10-15T12:39:14.899882405Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067954.900066
+            },
+            {
+              "line": "2026-10-15T12:39:18.328714111Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mRemove PCCRule[PccRuleId-446]",
+              "t": 1792067958.328865
+            },
+            {
+              "line": "2026-10-15T12:39:18.329812466Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067958.329894
+            },
+            {
+              "line": "2026-10-15T12:39:18.331882992Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067958.33208
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.4"
+    },
+    {
+      "af_id": "af4",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-5fb02428d01b432b",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af4/subscriptions/7301ab2a-9aae-4b9c-ad81-afdf091bf764",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:39:33.383774633Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792067973.383925
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:39:33.386378004Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mInstall PCCRule[PccRuleId-447]",
+              "t": 1792067973.386497
+            },
+            {
+              "line": "2026-10-15T12:39:33.390454790Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792067973.39055
+            },
+            {
+              "line": "2026-10-15T12:39:33.392265776Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792067973.392341
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.4"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-fcdaedac738f423b",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/fc33c465-144b-48c7-8bd0-232aeee8b88a",
+      "release_basis": [
+        "delete_ok",
+        "pfcp_after_delete"
+      ],
+      "release_state": "released",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:40:14.409941108Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068014.410176
+            },
+            {
+              "line": "2026-10-15T12:40:27.349404271Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068027.349513
+            },
+            {
+              "line": "2026-10-15T12:40:27.838329121Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068027.838623
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:40:14.412424546Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-655]",
+              "t": 1792068014.412523
+            },
+            {
+              "line": "2026-10-15T12:40:14.416721263Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068014.416849
+            },
+            {
+              "line": "2026-10-15T12:40:14.418609069Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068014.418685
+            },
+            {
+              "line": "2026-10-15T12:40:27.351437939Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mRemove PCCRule[PccRuleId-655]",
+              "t": 1792068027.351565
+            },
+            {
+              "line": "2026-10-15T12:40:27.352818096Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068027.352946
+            },
+            {
+              "line": "2026-10-15T12:40:27.354950509Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068027.355108
+            },
+            {
+              "line": "2026-10-15T12:40:27.840829227Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mRemove PCCRule[PccRuleId-656]",
+              "t": 1792068027.841083
+            },
+            {
+              "line": "2026-10-15T12:40:27.842067765Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068027.842265
+            },
+            {
+              "line": "2026-10-15T12:40:27.844235871Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068027.844311
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok",
+            "pfcp_after_delete"
+          ],
+          "pfcp_after_delete": [
+            {
+              "has_qer": false,
+              "req_t": 1792068034.998196,
+              "resp_t": 1792068034.998767,
+              "seid": "0x0000000000000002"
+            }
+          ]
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    },
+    {
+      "af_id": "af1",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-b9bd00618f864367",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af1/subscriptions/28420546-9b7b-4392-9e38-652389e08e16",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:40:34.927637392Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068034.928011
+            },
+            {
+              "line": "2026-10-15T12:40:34.991142814Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068034.991305
+            },
+            {
+              "line": "2026-10-15T12:40:42.761194484Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.761319
+            },
+            {
+              "line": "2026-10-15T12:40:42.790503268Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.79078
+            },
+            {
+              "line": "2026-10-15T12:40:42.807317708Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.807571
+            },
+            {
+              "line": "2026-10-15T12:40:42.839085479Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.839329
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:40:34.931333240Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-657]",
+              "t": 1792068034.931468
+            },
+            {
+              "line": "2026-10-15T12:40:34.938252786Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068034.938422
+            },
+            {
+              "line": "2026-10-15T12:40:34.941060177Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068034.941275
+            },
+            {
+              "line": "2026-10-15T12:40:34.993742456Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-656]",
+              "t": 1792068034.993815
+            },
+            {
+              "line": "2026-10-15T12:40:34.997206665Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068034.997271
+            },
+            {
+              "line": "2026-10-15T12:40:34.998908190Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068034.998953
+            },
+            {
+              "line": "2026-10-15T12:40:42.763816018Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mRemove PCCRule[PccRuleId-657]",
+              "t": 1792068042.763967
+            },
+            {
+              "line": "2026-10-15T12:40:42.765400507Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.76551
+            },
+            {
+              "line": "2026-10-15T12:40:42.768774766Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.768958
+            },
+            {
+              "line": "2026-10-15T12:40:42.794282689Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mRemove PCCRule[PccRuleId-438]",
+              "t": 1792068042.794448
+            },
+            {
+              "line": "2026-10-15T12:40:42.796501202Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.796709
+            },
+            {
+              "line": "2026-10-15T12:40:42.799521988Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.799701
+            },
+            {
+              "line": "2026-10-15T12:40:42.810651414Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mRemove PCCRule[PccRuleId-447]",
+              "t": 1792068042.81089
+            },
+            {
+              "line": "2026-10-15T12:40:42.812627292Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.812792
+            },
+            {
+              "line": "2026-10-15T12:40:42.815717592Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.8159
+            },
+            {
+              "line": "2026-10-15T12:40:42.842457883Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mRemove PCCRule[PccRuleId-656]",
+              "t": 1792068042.842829
+            },
+            {
+              "line": "2026-10-15T12:40:42.844896554Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.845189
+            },
+            {
+              "line": "2026-10-15T12:40:42.848743586Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.848926
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.1"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-8024d4823a4647ef",
+      "cp_basis": {
+        "pcf_session_binding_for_ue": false,
+        "pfcp_modification_ok": true,
+        "smf_install_pccrule": true
+      },
+      "cp_state": "cp_unverified",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/88d5db5d-be69-4dbd-adcd-f8cfe9c21d36",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-15T12:40:34.927637392Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068034.928011
+            },
+            {
+              "line": "2026-10-15T12:40:34.991142814Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068034.991305
+            },
+            {
+              "line": "2026-10-15T12:40:42.761194484Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.761319
+            },
+            {
+              "line": "2026-10-15T12:40:42.790503268Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.79078
+            },
+            {
+              "line": "2026-10-15T12:40:42.807317708Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.807571
+            },
+            {
+              "line": "2026-10-15T12:40:42.839085479Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1792068042.839329
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-15T12:40:34.931333240Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mInstall PCCRule[PccRuleId-657]",
+              "t": 1792068034.931468
+            },
+            {
+              "line": "2026-10-15T12:40:34.938252786Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068034.938422
+            },
+            {
+              "line": "2026-10-15T12:40:34.941060177Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068034.941275
+            },
+            {
+              "line": "2026-10-15T12:40:34.993742456Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mInstall PCCRule[PccRuleId-656]",
+              "t": 1792068034.993815
+            },
+            {
+              "line": "2026-10-15T12:40:34.997206665Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068034.997271
+            },
+            {
+              "line": "2026-10-15T12:40:34.998908190Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068034.998953
+            },
+            {
+              "line": "2026-10-15T12:40:42.763816018Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000001] \u001b[0mRemove PCCRule[PccRuleId-657]",
+              "t": 1792068042.763967
+            },
+            {
+              "line": "2026-10-15T12:40:42.765400507Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.76551
+            },
+            {
+              "line": "2026-10-15T12:40:42.768774766Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.768958
+            },
+            {
+              "line": "2026-10-15T12:40:42.794282689Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000003] \u001b[0mRemove PCCRule[PccRuleId-438]",
+              "t": 1792068042.794448
+            },
+            {
+              "line": "2026-10-15T12:40:42.796501202Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.796709
+            },
+            {
+              "line": "2026-10-15T12:40:42.799521988Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.799701
+            },
+            {
+              "line": "2026-10-15T12:40:42.810651414Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000004] \u001b[0mRemove PCCRule[PccRuleId-447]",
+              "t": 1792068042.81089
+            },
+            {
+              "line": "2026-10-15T12:40:42.812627292Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.812792
+            },
+            {
+              "line": "2026-10-15T12:40:42.815717592Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.8159
+            },
+            {
+              "line": "2026-10-15T12:40:42.842457883Z\u001b[36m [INFO][SMF][PduSess][pdu_session_id:1][supi:imsi-208930000000002] \u001b[0mRemove PCCRule[PccRuleId-656]",
+              "t": 1792068042.842829
+            },
+            {
+              "line": "2026-10-15T12:40:42.844896554Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1792068042.845189
+            },
+            {
+              "line": "2026-10-15T12:40:42.848743586Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1792068042.848926
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    }
+  ],
+  "summary": {
+    "cp_unverified": 13,
+    "release:released": 8,
+    "release:revoked": 5,
+    "unverified": 13
+  }
+}

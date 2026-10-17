@@ -1,0 +1,536 @@
+{
+  "config": {
+    "alloc_window_s": 15.0,
+    "allocated_if_any_of": [
+      [
+        "notification"
+      ],
+      [
+        "pfcp",
+        "dataplane"
+      ]
+    ],
+    "dataplane_min_ratio": 0.9,
+    "log_patterns": {
+      "pcf": [
+        "(?i)policyauthorization",
+        "(?i)app-sessions?",
+        "(?i)smpolicy.*update"
+      ],
+      "smf": [
+        "(?i)updatenotify",
+        "(?i)pfcp.*modif",
+        "(?i)qos"
+      ],
+      "upf": [
+        "(?i)qer",
+        "(?i)session modif"
+      ]
+    },
+    "release_window_s": 15.0,
+    "released_if_any_of": [
+      [
+        "delete_ok",
+        "release_notification"
+      ],
+      [
+        "delete_ok",
+        "pfcp_after_delete"
+      ]
+    ],
+    "tshark_fields": [
+      "frame.time_epoch",
+      "pfcp.msg_type",
+      "pfcp.seid",
+      "pfcp.ue_ip_addr_ipv4",
+      "pfcp.qer_id",
+      "pfcp.cause",
+      "pfcp.seqno"
+    ]
+  },
+  "pfcp_error": null,
+  "pfcp_messages": 48,
+  "subscriptions": [
+    {
+      "af_id": "af3",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-fa9a2785f5164471",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af3/subscriptions/01bdec16-5dd8-481f-8fb2-e2d4fc74af8c",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.771665991Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.771811
+            },
+            {
+              "line": "2026-10-14T01:39:13.779596498Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.77975
+            },
+            {
+              "line": "2026-10-14T01:39:13.816864650Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 500 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.817223
+            },
+            {
+              "line": "2026-10-14T01:39:13.841549258Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.841644
+            },
+            {
+              "line": "2026-10-14T01:39:13.842747751Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.842903
+            },
+            {
+              "line": "2026-10-14T01:39:13.848706372Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848835
+            },
+            {
+              "line": "2026-10-14T01:39:13.848902434Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848953
+            },
+            {
+              "line": "2026-10-14T01:39:15.665785113Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000003-131/delete |  |",
+              "t": 1791941955.665999
+            },
+            {
+              "line": "2026-10-14T01:39:15.672902463Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.673046
+            },
+            {
+              "line": "2026-10-14T01:39:15.687075617Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000004-126/delete |  |",
+              "t": 1791941955.687111
+            },
+            {
+              "line": "2026-10-14T01:39:15.691954943Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000002-147/delete |  |",
+              "t": 1791941955.692022
+            },
+            {
+              "line": "2026-10-14T01:39:15.693149096Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.693267
+            },
+            {
+              "line": "2026-10-14T01:39:15.697628979Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.697719
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.782058779Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.782339
+            },
+            {
+              "line": "2026-10-14T01:39:13.786121178Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.786187
+            },
+            {
+              "line": "2026-10-14T01:39:13.787833395Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.787918
+            },
+            {
+              "line": "2026-10-14T01:39:13.850804999Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.850958
+            },
+            {
+              "line": "2026-10-14T01:39:13.851143919Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.851193
+            },
+            {
+              "line": "2026-10-14T01:39:13.853993387Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854062
+            },
+            {
+              "line": "2026-10-14T01:39:13.854067587Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854108
+            },
+            {
+              "line": "2026-10-14T01:39:13.855719389Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.855817
+            },
+            {
+              "line": "2026-10-14T01:39:13.855978148Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.856021
+            },
+            {
+              "line": "2026-10-14T01:39:15.674739603Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.674856
+            },
+            {
+              "line": "2026-10-14T01:39:15.675795911Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.675857
+            },
+            {
+              "line": "2026-10-14T01:39:15.677366447Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.677425
+            },
+            {
+              "line": "2026-10-14T01:39:15.694880938Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.695008
+            },
+            {
+              "line": "2026-10-14T01:39:15.695843612Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.6959
+            },
+            {
+              "line": "2026-10-14T01:39:15.697188551Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.697294
+            },
+            {
+              "line": "2026-10-14T01:39:15.698388230Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.698435
+            },
+            {
+              "line": "2026-10-14T01:39:15.699179348Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.699268
+            },
+            {
+              "line": "2026-10-14T01:39:15.700840318Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.700913
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.3"
+    },
+    {
+      "af_id": "af1",
+      "correlation_id": "pn-5a838a976eb74618",
+      "location": null,
+      "sources": {},
+      "state": "rejected",
+      "ue_ipv4": "10.70.0.1"
+    },
+    {
+      "af_id": "af4",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-bf085ae031cb444b",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af4/subscriptions/16701fcd-2c85-4e7b-b3ac-bfeff94a565f",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.771665991Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.771811
+            },
+            {
+              "line": "2026-10-14T01:39:13.779596498Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.77975
+            },
+            {
+              "line": "2026-10-14T01:39:13.816864650Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 500 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.817223
+            },
+            {
+              "line": "2026-10-14T01:39:13.841549258Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.841644
+            },
+            {
+              "line": "2026-10-14T01:39:13.842747751Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.842903
+            },
+            {
+              "line": "2026-10-14T01:39:13.848706372Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848835
+            },
+            {
+              "line": "2026-10-14T01:39:13.848902434Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848953
+            },
+            {
+              "line": "2026-10-14T01:39:15.665785113Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000003-131/delete |  |",
+              "t": 1791941955.665999
+            },
+            {
+              "line": "2026-10-14T01:39:15.672902463Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.673046
+            },
+            {
+              "line": "2026-10-14T01:39:15.687075617Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000004-126/delete |  |",
+              "t": 1791941955.687111
+            },
+            {
+              "line": "2026-10-14T01:39:15.691954943Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000002-147/delete |  |",
+              "t": 1791941955.692022
+            },
+            {
+              "line": "2026-10-14T01:39:15.693149096Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.693267
+            },
+            {
+              "line": "2026-10-14T01:39:15.697628979Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.697719
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.782058779Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.782339
+            },
+            {
+              "line": "2026-10-14T01:39:13.786121178Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.786187
+            },
+            {
+              "line": "2026-10-14T01:39:13.787833395Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.787918
+            },
+            {
+              "line": "2026-10-14T01:39:13.850804999Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.850958
+            },
+            {
+              "line": "2026-10-14T01:39:13.851143919Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.851193
+            },
+            {
+              "line": "2026-10-14T01:39:13.853993387Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854062
+            },
+            {
+              "line": "2026-10-14T01:39:13.854067587Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854108
+            },
+            {
+              "line": "2026-10-14T01:39:13.855719389Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.855817
+            },
+            {
+              "line": "2026-10-14T01:39:13.855978148Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.856021
+            },
+            {
+              "line": "2026-10-14T01:39:15.674739603Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.674856
+            },
+            {
+              "line": "2026-10-14T01:39:15.675795911Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.675857
+            },
+            {
+              "line": "2026-10-14T01:39:15.677366447Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.677425
+            },
+            {
+              "line": "2026-10-14T01:39:15.694880938Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.695008
+            },
+            {
+              "line": "2026-10-14T01:39:15.695843612Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.6959
+            },
+            {
+              "line": "2026-10-14T01:39:15.697188551Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.697294
+            },
+            {
+              "line": "2026-10-14T01:39:15.698388230Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.698435
+            },
+            {
+              "line": "2026-10-14T01:39:15.699179348Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.699268
+            },
+            {
+              "line": "2026-10-14T01:39:15.700840318Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.700913
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.4"
+    },
+    {
+      "af_id": "af2",
+      "basis": [
+        "http_201_only"
+      ],
+      "correlation_id": "pn-5bee89423ae24a35",
+      "location": "http://nef.free5gc.org:8000/3gpp-as-session-with-qos/v1/prenef-lab-af2/subscriptions/d96df6c1-b837-493e-9271-10e26493577f",
+      "release_basis": [
+        "delete_ok_only (local, not network release)"
+      ],
+      "release_state": "revoked",
+      "sources": {
+        "dataplane": [],
+        "log_hints": {
+          "pcf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.771665991Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.771811
+            },
+            {
+              "line": "2026-10-14T01:39:13.779596498Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.77975
+            },
+            {
+              "line": "2026-10-14T01:39:13.816864650Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 500 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.817223
+            },
+            {
+              "line": "2026-10-14T01:39:13.841549258Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.841644
+            },
+            {
+              "line": "2026-10-14T01:39:13.842747751Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 201 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions |  |",
+              "t": 1791941953.842903
+            },
+            {
+              "line": "2026-10-14T01:39:13.848706372Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848835
+            },
+            {
+              "line": "2026-10-14T01:39:13.848902434Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941953.848953
+            },
+            {
+              "line": "2026-10-14T01:39:15.665785113Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000003-131/delete |  |",
+              "t": 1791941955.665999
+            },
+            {
+              "line": "2026-10-14T01:39:15.672902463Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.673046
+            },
+            {
+              "line": "2026-10-14T01:39:15.687075617Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000004-126/delete |  |",
+              "t": 1791941955.687111
+            },
+            {
+              "line": "2026-10-14T01:39:15.691954943Z\u001b[36m [INFO][PCF][GIN] \u001b[0m| 204 |   10.101.200.14 | POST    | /npcf-policyauthorization/v1/app-sessions/imsi-208930000000002-147/delete |  |",
+              "t": 1791941955.692022
+            },
+            {
+              "line": "2026-10-14T01:39:15.693149096Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.693267
+            },
+            {
+              "line": "2026-10-14T01:39:15.697628979Z\u001b[36m [INFO][PCF][SMpolicy] \u001b[0mSend SM Policy Update Notification to SMF",
+              "t": 1791941955.697719
+            }
+          ],
+          "smf-qod423": [
+            {
+              "line": "2026-10-14T01:39:13.782058779Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.782339
+            },
+            {
+              "line": "2026-10-14T01:39:13.786121178Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.786187
+            },
+            {
+              "line": "2026-10-14T01:39:13.787833395Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.787918
+            },
+            {
+              "line": "2026-10-14T01:39:13.850804999Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.850958
+            },
+            {
+              "line": "2026-10-14T01:39:13.851143919Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941953.851193
+            },
+            {
+              "line": "2026-10-14T01:39:13.853993387Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854062
+            },
+            {
+              "line": "2026-10-14T01:39:13.854067587Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941953.854108
+            },
+            {
+              "line": "2026-10-14T01:39:13.855719389Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.855817
+            },
+            {
+              "line": "2026-10-14T01:39:13.855978148Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941953.856021
+            },
+            {
+              "line": "2026-10-14T01:39:15.674739603Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.674856
+            },
+            {
+              "line": "2026-10-14T01:39:15.675795911Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.675857
+            },
+            {
+              "line": "2026-10-14T01:39:15.677366447Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.677425
+            },
+            {
+              "line": "2026-10-14T01:39:15.694880938Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.695008
+            },
+            {
+              "line": "2026-10-14T01:39:15.695843612Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.6959
+            },
+            {
+              "line": "2026-10-14T01:39:15.697188551Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.697294
+            },
+            {
+              "line": "2026-10-14T01:39:15.698388230Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mIn HandleSMPolicyUpdateNotify",
+              "t": 1791941955.698435
+            },
+            {
+              "line": "2026-10-14T01:39:15.699179348Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mSending PFCP Session Modification Request",
+              "t": 1791941955.699268
+            },
+            {
+              "line": "2026-10-14T01:39:15.700840318Z\u001b[36m [INFO][SMF][PduSess] \u001b[0mReceived PFCP Session Modification Response",
+              "t": 1791941955.700913
+            }
+          ],
+          "upf-qod423": []
+        },
+        "notifications": [],
+        "pfcp_modifications": [],
+        "release": {
+          "have": [
+            "delete_ok"
+          ],
+          "pfcp_after_delete": []
+        }
+      },
+      "state": "unverified",
+      "ue_ipv4": "10.70.0.2"
+    }
+  ],
+  "summary": {
+    "rejected": 1,
+    "release:revoked": 3,
+    "unverified": 3
+  }
+}
